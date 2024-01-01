@@ -1,8 +1,8 @@
-import Image from 'next/image'
 import {Button} from "@/components/ui/button";
 import {cn} from "@/lib/utils";
 import {LoginButton} from "@/components/auth/login-button";
 import {Noticia_Text, Nunito_Sans} from "next/font/google";
+import {signOut} from "@/auth";
 
 
 const nunitoSans = Nunito_Sans({ subsets: ['latin'], weight: ['400', '700'] });
@@ -25,6 +25,15 @@ export default function Home() {
             </Button>
           </LoginButton>
         </div>
+        <form action={async () => {
+          'use server';
+
+          await signOut();
+        }}>
+          <Button size='lg'>
+            Log out of Streamify
+          </Button>
+        </form>
       </main>
   )
 }
