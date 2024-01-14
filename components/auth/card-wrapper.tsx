@@ -7,8 +7,9 @@ import {
     CardFooter
 } from "@/components/ui/card";
 import {Header} from "@/components/auth/header";
-import {Socials} from "@/components/auth/socials";
 import {BackButton} from "@/components/auth/back-button";
+import React from "react";
+import {Social} from "@/components/auth/socials";
 
 interface CardWrapperProps {
     children: React.ReactNode;
@@ -35,7 +36,7 @@ export const CardWrapper = ({
             </CardContent>
             {showSocial && (
                 <CardFooter>
-                    <Socials />
+                    <Social />
                 </CardFooter>
             )}
             <CardFooter>
